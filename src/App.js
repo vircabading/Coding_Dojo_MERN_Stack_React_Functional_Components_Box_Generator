@@ -12,23 +12,20 @@ function App() {
   const [colors, setColors] = useState([]);
 
   const setNewColor = (newColor) => {
-    setColors( colors.map(color => color ).push(newColor) );
+    setColors( (colors) => [...colors, newColor] );
   }
 
   return (
     <div className="App">
       {/* //// COLOR FORM COMPONENT ////////////////////////////// */}
       <div className="bg-info rounded mb-3 p-2">
-        <ColorForm onNewColor={ setNewColor }/>
+        <ColorForm setNewColor={ setNewColor }/>
       </div>
 
       {/* //// DISPLAY BOC COMPONENT ///////////////////////////// */}
       <div className="border rounded mb-3 p-2">
         <BoxDisplay colors={ colors }/>
-        {
-          console.log("**** In Display in App.js******");
-          console.log("Colors:",colors);
-        }
+
       </div>
     </div>
   );
