@@ -28,7 +28,7 @@ function App() {
         <ColorForm setNewBox={ setNewBox }/>
       </div>
 
-      {/* //// DISPLAY BOC COMPONENT ///////////////////////////// */}
+      {/* //// DISPLAY BOX COMPONENT ///////////////////////////// */}
       <div className="border rounded mb-3 p-2">
         <BoxDisplay boxs= { boxs }/>
 
