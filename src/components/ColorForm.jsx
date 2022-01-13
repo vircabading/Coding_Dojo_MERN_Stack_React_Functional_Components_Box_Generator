@@ -25,9 +25,10 @@ const ColorForm = (props) => {
 
     // //// UTILITIES TO HANDLE INPUT //////////////////////////
     const handleSubmit = (e) => {
-        e.preventDefault();
-        // //// 
+        e.preventDefault();         // Prevent Window Refresh on form submit
+        // **** Add a New Box to the Array of Boxes in App *****
         props.setNewBox( color, height, width );
+        // **** Reset Values of fields after input submitted successfully
         setColor("dodgerblue");
         setHeight("100");
         setWidth("100");
@@ -41,17 +42,28 @@ const ColorForm = (props) => {
                 {/* **** Box Color ***************************** */}
                 <div className="form-group mb-2">
                     <label>Box Color: </label>
-                    <input id="color" className="form-control" type="text" onChange={(e) => handleColor(e)} value={ color }/>
+                    <input id="color" 
+                        className="form-control" 
+                        type="text" onChange={(e) => handleColor(e)} 
+                        value={ color }/>
                 </div>
                 {/* **** Box Height **************************** */}
                 <div className="form-group mb-2">
                     <label>Height: </label>
-                    <input id="height" className="form-control" type="text" onChange={(e) => handleHeight(e)} value={ height }/>
+                    <input id="height" 
+                        className="form-control" 
+                        type="text" 
+                        onChange={(e) => handleHeight(e)} 
+                        value={ height }/>
                 </div>
                 {/* **** Box Width ***************************** */}
                 <div className="form-group mb-2">
                     <label>Width: </label>
-                    <input id="width" className="form-control" type="text" onChange={(e) => handleWidth(e)} value={ width }/>
+                    <input id="width" 
+                        className="form-control" 
+                        type="text" 
+                        onChange={(e) => handleWidth(e)} 
+                        value={ width }/>
                 </div>
                 {/* **** Submit Button ************************* */}
                 <input className="btn btn-sm bg-success"type="submit" value="Add Box" />
