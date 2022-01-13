@@ -9,22 +9,26 @@ import { useState } from 'react';
 
 function App() {
 
-  const [colors, setColors] = useState([]);
+  const [boxs, setBoxs] = useState([]);
 
-  const setNewColor = (newColor) => {
-    setColors( (colors) => [...colors, newColor] );
+  const setNewBox = (newColor, newHeight, newWidth) => {
+    setBoxs( (boxs) => [...boxs, {
+      color: newColor,
+      height: newHeight+'px',
+      width: newWidth+'px'
+    }] );
   }
 
   return (
     <div className="App">
       {/* //// COLOR FORM COMPONENT ////////////////////////////// */}
       <div className="bg-info rounded mb-3 p-2">
-        <ColorForm setNewColor={ setNewColor }/>
+        <ColorForm setNewBox={ setNewBox }/>
       </div>
 
       {/* //// DISPLAY BOC COMPONENT ///////////////////////////// */}
       <div className="border rounded mb-3 p-2">
-        <BoxDisplay colors={ colors }/>
+        <BoxDisplay boxs= { boxs }/>
 
       </div>
     </div>
