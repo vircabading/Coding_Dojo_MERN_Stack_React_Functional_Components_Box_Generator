@@ -7,7 +7,7 @@ import react, { useState } from "react";
 const ColorForm = (props) => {
     return (
         <div>
-            <h1>In Color Form</h1>
+            <h1>In Color Form Component</h1>
         </div>
     );
 }
