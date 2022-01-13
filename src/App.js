@@ -8,17 +8,19 @@ import { useState } from 'react';
 //////////////////////////////////////////////////////////////////
 
 function App() {
-
-  const [boxs, setBoxs] = useState([]);
-
+  // //// FIELDS /////////////////////////////////////////////////
+  const [boxs, setBoxs] = useState([]);   // An Array of Box Objects
+  // //// CALL BACK FUNCTION TO SET BOX VARIABLES IN COLOR FORM //
+  //  Adds a New Box Object to the array of Box Objects
   const setNewBox = (newColor, newHeight, newWidth) => {
     setBoxs( (boxs) => [...boxs, {
-      color: newColor,
-      height: newHeight+'px',
-      width: newWidth+'px'
+      color: newColor,              // Box Color
+      height: newHeight+'px',       // Box Height
+      width: newWidth+'px'          // Box Width
     }] );
   }
 
+  // //// OUTPUT /////////////////////////////////////////////////
   return (
     <div className="App">
       {/* //// COLOR FORM COMPONENT ////////////////////////////// */}
